@@ -17,13 +17,12 @@ let myList = document.querySelector(".my-list") :?> Browser.Types.HTMLUListEleme
 myButton.onclick <- fun _ ->
     async {
         let! students = studentApi.AllStudents()
-        students
-            |> List.iter (fun student ->
-                let item =
-                    document.createElement("li")
-                        |> myList.appendChild
-                let text = sprintf "Student %s is %d years old\n" student.Name student.Age
-                document.createTextNode(text)
-                    |> item.appendChild
-                    |> ignore)
+        for student in students do
+            let item =
+                document.createElement("li")
+                    |> myList.appendChild
+            let text = sprintf "Student %s is %d years old\n" student.Name student.Age
+            document.createTextNode(text)
+                |> item.appendChild
+                |> ignore
     } |> Async.StartImmediate
