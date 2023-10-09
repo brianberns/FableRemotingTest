@@ -9,6 +9,6 @@
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.14.0" />
     <PackageReference Include="Fable.Core" Version="4.1.0" />
-    <PackageReference Include="Fable.Remoting.Client" Version="7.26.0" />
+    <PackageReference Include="Fable.Remoting.Client" Version="7.29.0" />
   </ItemGroup>
 </Project>
